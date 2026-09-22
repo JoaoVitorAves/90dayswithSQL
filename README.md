@@ -56,5 +56,5 @@ Parte das perguntas vem de plataformas de prática de SQL, sempre indicadas no c
 
 Se quiser trocar ideia sobre alguma solução ou sugerir uma abordagem diferente, me chama:
 
-- LinkedIn: [seu-linkedin](https://www.linkedin.com/in/seu-usuario)
-- E-mail: seu-email@exemplo.com
+- LinkedIn: [seu-linkedin](https://www.linkedin.com/in/joao-vitor-dataanalyst/)
+- E-mail: joaoalvesngcs@gmail.com
