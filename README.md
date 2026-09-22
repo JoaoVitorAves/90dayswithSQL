@@ -35,19 +35,14 @@ sql-90/
 
 ---
 
-## Índice
-
-| # | Pergunta | Conceitos | Área |
-|---|---|---|---|
-| 001 | [Funcionários que ganham mais que o próprio gestor](01-fundamentos/001_funcionarios_ganham_mais_que_gestor.sql) | CTE, self-join | RH |
-
----
-
 ## Conceitos praticados até agora
 
 - CTEs (`WITH`)
 - Self-join
-- `INNER JOIN` vs `LEFT JOIN` e o efeito do `WHERE` sobre valores nulos
+- Joins variados
+- Self-Join
+- Views
+- Funis avançados
 
 ---
 
