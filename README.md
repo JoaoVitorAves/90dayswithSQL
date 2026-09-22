@@ -1,6 +1,5 @@
 # SQL 90 — 90 perguntas de negócio respondidas com SQL
 
-![Progresso](2/90)
 ![SQL](https://img.shields.io/badge/linguagem-SQL-336791)
 
 Durante 90 dias, resolvo uma pergunta por dia usando SQL. A regra é simples: nada de exercício solto. Cada query parte de uma pergunta que poderia aparecer de verdade numa empresa (RH, vendas, produto, finanças) e vem acompanhada do contexto, da abordagem e do que eu aprendi resolvendo.
