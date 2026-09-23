@@ -1,0 +1,53 @@
+Identificação do segundo maior salário com DENSE_RANK
+
+Contexto do desafio
+-------------------
+Cenário: a área de RH/Remuneração solicitou o
+segundo maior salário praticado na empresa, para apoiar análises
+de faixa salarial e benchmarking interno.
+
+Solução que encontrei e utilizei
+----------------
+Utilização de uma CTE (ranking_salarios) que classifica os salários
+em ordem decrescente por meio da função de janela DENSE_RANK().
+Na consulta final, é filtrada a posição 2 e aplicado MAX(salary)
+para retornar o valor-alvo.
+
+Consulta simples (menos de 2 minutos para montagem), mas poderosa na resposta. 
+O melhor, a query pode ser reutilizada sempre que necessário. Não apenas para encontrar o segundo maior salário!
+
+Query
+=================================
+WITH ranking_salarios AS (
+    SELECT
+        salary,
+        DENSE_RANK() OVER (ORDER BY salary DESC) AS posicao
+    FROM employee
+)
+SELECT MAX(salary) AS salario_alvo
+FROM ranking_salarios
+WHERE posicao = 2;
+=================================
+
+
+
+Decisões técnicas
+-----------------
+- DENSE_RANK() em vez de ROW_NUMBER() ou LIMIT: salários iguais
+  recebem a mesma posição, garantindo que empates no topo não
+  distorçam o resultado. O retorno é sempre o segundo maior valor
+  distinto.
+- MAX() na consulta final: consolida o resultado em uma única linha
+  e retorna NULL quando não existe uma segunda posição (ex.: base
+  com apenas um salário distinto), evitando resultados incorretos
+  ou vazios.
+- Estrutura parametrizável: para buscar o N-ésimo maior salário,
+  basta alterar o valor do filtro de posição. Para análises por
+  área, basta incluir PARTITION BY department_id na janela.
+
+Princípio adotado
+-----------------
+Na maioria dos cenários, a solução simples é a melhor solução.
+Aqui, a escolha pela função de janela se justifica por entregar,
+com poucas linhas, uma query correta em casos de borda, com o tempo de query baixíssimo, legível
+para outros analistas e reaproveitável para novas demandas.
