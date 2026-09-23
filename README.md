@@ -8,6 +8,18 @@ O objetivo é sair do "sei a sintaxe" para o "sei transformar uma pergunta de ne
 
 ---
 
+## Navegação
+
+| Módulo | Dias | Foco |
+|---|:---:|---|
+| [01 · Fundamentos](01-fundamentos/) | 1–30 | Filtros, agregações, joins e CTEs |
+| [02 · Window Functions](02-window-functions/) | 31–60 | Ranking, acumulados e comparação entre períodos |
+| [03 · Análises](03-analises/) | 61–90 | Coorte, funil, retenção e análises completas |
+
+Cada módulo tem um índice com todos os dias, a pergunta resolvida e o link para a solução.
+
+---
+
 ## Como cada arquivo é organizado
 
 Todo `.sql` deste repositório segue o mesmo formato:
@@ -22,15 +34,22 @@ Todo `.sql` deste repositório segue o mesmo formato:
 | **Solução** | A query que responde exatamente à pergunta |
 | **Indo além** *(quando faz sentido)* | Uma versão mais completa, pensada para quem vai consumir o resultado |
 
+Nos dias de destaque, a solução também ganha um arquivo `.md` com explicação visual: tabelas comparativas, casos de borda e diagramas.
+
 ---
 
 ## Estrutura
 
 ```
 sql-90/
-├── 01-fundamentos/        # dias 1–30: filtros, agregações, joins, CTEs
-├── 02-window-functions/   # dias 31–60: ranking, acumulados, comparação entre períodos
-└── 03-analises/           # dias 61–90: coorte, funil, retenção, análises completas
+├── README.md
+├── imagens/                  # imagens usadas nos arquivos .md
+├── 01-fundamentos/           # dias 1–30: filtros, agregações, joins, CTEs
+│   └── README.md             # índice do módulo
+├── 02-window-functions/      # dias 31–60: ranking, acumulados, comparação entre períodos
+│   └── README.md
+└── 03-analises/              # dias 61–90: coorte, funil, retenção, análises completas
+    └── README.md
 ```
 
 ---
@@ -38,10 +57,9 @@ sql-90/
 ## Conceitos praticados até agora
 
 - CTEs (`WITH`)
-- Self-join
-- Joins variados
-- Self-Join
+- Joins variados, incluindo self-join
 - Views
+- Window functions (`DENSE_RANK`)
 - Funis avançados
 
 ---
@@ -56,5 +74,5 @@ Parte das perguntas vem de plataformas de prática de SQL, sempre indicadas no c
 
 Se quiser trocar ideia sobre alguma solução ou sugerir uma abordagem diferente, me chama:
 
-- LinkedIn: [seu-linkedin](https://www.linkedin.com/in/joao-vitor-dataanalyst/)
+- LinkedIn: [João Vitor](https://www.linkedin.com/in/joao-vitor-dataanalyst/)
 - E-mail: joaoalvesngcs@gmail.com
